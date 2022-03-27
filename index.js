@@ -14,7 +14,11 @@ app.set("port", process.env.port || 2627);
 
 // router links
 app.get("/", function(req, res){
-    res.send(`<h1>Welcome `)
+    res.send(`<h1>Welcome to my Tuck Shop Finder </h1>
+    <br>
+    <hr>
+    <p> DEVELOPED BY TDL2627</p>
+    `)
 });
 
 
