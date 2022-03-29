@@ -2,12 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 const app = express();
-// const studentRouter = require("./routes/studentRouter")
+const shopRouter = require("./routes/shopRoute")
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors());
-// app.use("/students", studentRouter);
+app.use("/shops", shopRouter);
 
 app.set("port", process.env.port || 2627);
 
@@ -22,9 +22,9 @@ app.get("/", function(req, res){
 });
 
 
-// app.get("/students", function(req, res){
-//     res.send(students)
-// });
+app.get("/shops", function(req, res){
+    res.send(shops)
+});
 
 const port = process.env.PORT || 2627;
 app.listen(port, () => {
